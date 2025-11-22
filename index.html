@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="styles/style.css"/>
+  <title>Guild Registration - GURJAR NG</title>
+  <style>
+  *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #000428, #004e92);
+  animation: bgAnimation 10s infinite alternate;
+  color: #fff;
+}
+
+@keyframes bgAnimation {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.container {
+  background: rgba(255,255,255,0.08);
+  padding: 25px 30px;
+  width: 350px;
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+  .h2-neon {
+  font-family: 'Orbitron', 'Segoe UI', sans-serif;
+  font-size: 1.9rem;
+  text-align: center;
+  color: #e6f0ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 12px;
+  text-shadow:
+    0 0 6px rgba(255, 30, 86, 0.6),
+    0 0 18px rgba(255, 106, 0, 0.25);
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.02), transparent 40%);
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.input-box {
+  margin: 12px 0;
+}
+
+label {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  outline: none;
+  border: 2px solid transparent;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #00eaff;
+  background: rgba(255,255,255,0.25);
+}
+
+textarea {
+  resize: none;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  background: #00eaff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #00a9c7;
+  transform: scale(1.05);
+}
+  </style>
+  <script>
+  document.querySelector(".submit-btn").addEventListener("click", function(e) {
+  this.style.transform = "scale(0.9)";
+  setTimeout(() => {
+    this.style.transform = "scale(1)";
+  }, 150);
+});
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+    </div>
+  </header>
+    <section class="hero">
+  <div class="hero-content">
+    <h1>Welcome to GURJAR NG</h1>
+    <p>Join our guild — Free Fire Max</p>
+    <h2 class="h2-neon" To join my Guild in freefiremax</h2>
+  </div>
+</section>
+
+  <div class="container">
+    <h1>Guild Registration<br>Free Fire Max</h1>
+
+    <form action="https://formsubmit.co/nikhileshgurjar11@gmail.com" method="post">
+      <div class="input-box">
+        <label for="Uid">UID</label>
+        <input type="number" required placeholder="Enter UID">
+      </div>
+
+      <div class="input-box">
+        <label for="Username">Username</label>
+        <input type="text" id="Username" required="Username" placeholder="Enter Username">
+      </div>
+
+      <div class="input-box">
+        <label for="instagram">Instagram</label>
+        <input type="text" required="instagram" placeholder="Enter Instagram ID">
+      </div>
+
+      <div class="input-box">
+        <label for="Level">Level</label>
+        <input type="number" placeholder="Enter your Level">
+      </div>
+
+      <div class="input-box">
+        <label for="Comments">Comments</label>
+        <textarea id="Comments" rows="4" placeholder="Enter Your Comments"></textarea>
+      </div>
+
+      <button class="submit-btn" type="submit">Submit</button>
+    </form>
+  </div>
+
+</body>
+</html>
