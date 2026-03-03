@@ -1,173 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <link rel="stylesheet" href="styles/style.css"/>
-  <title>Guild Registration - GURJAR NG</title>
-  <style>
-  *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
+<meta charset="UTF-8">
+<title>Free Fire Tournament</title>
 
+<style>
+
+/* Background Image */
 body {
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(45deg, #000428, #004e92);
-  animation: bgAnimation 10s infinite alternate;
-  color: #fff;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url("bg.jpg") no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
-@keyframes bgAnimation {
-  0% { filter: hue-rotate(0deg); }
-  100% { filter: hue-rotate(360deg); }
+/* Dark overlay */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    top: 0;
+    left: 0;
 }
 
+/* Container */
 .container {
-  background: rgba(255,255,255,0.08);
-  padding: 25px 30px;
-  width: 350px;
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.1);
-  animation: fadeIn 1s ease-in-out;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    z-index: 1;
 }
 
-@keyframes fadeIn {
-  0% { opacity: 0; transform: scale(.9); }
-  100% { opacity: 1; transform: scale(1); }
+/* Glass Form */
+.form-box {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 25px red;
+    transition: 0.4s;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 22px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-  .h2-neon {
-  font-family: 'Orbitron', 'Segoe UI', sans-serif;
-  font-size: 1.9rem;
-  text-align: center;
-  color: #e6f0ff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 8px 12px;
-  text-shadow:
-    0 0 6px rgba(255, 30, 86, 0.6),
-    0 0 18px rgba(255, 106, 0, 0.25);
-  background: radial-gradient(ellipse at center, rgba(255,255,255,0.02), transparent 40%);
-  border-radius: 8px;
-  display: inline-block;
+.form-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 40px red;
 }
 
-.input-box {
-  margin: 12px 0;
+.form-box h1 {
+    color: #ff3c3c;
 }
 
-label {
-  font-size: 14px;
-  display: block;
-  margin-bottom: 6px;
+/* Inputs */
+form input, 
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: none;
 }
 
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  outline: none;
-  border: 2px solid transparent;
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-  transition: 0.3s ease;
+form textarea {
+    height: 80px;
+    resize: none;
 }
 
-input:focus, textarea:focus {
-  border-color: #00eaff;
-  background: rgba(255,255,255,0.25);
+form input:focus,
+form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px red;
 }
 
-textarea {
-  resize: none;
+/* Button */
+form button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, red, orange);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.submit-btn {
-  width: 100%;
-  margin-top: 10px;
-  padding: 12px;
-  background: #00eaff;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 15px;
-  transition: 0.3s;
+form button:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 20px red;
 }
 
-.submit-btn:hover {
-  background: #00a9c7;
-  transform: scale(1.05);
+/* Info Box */
+.info-box {
+    background: rgba(255,255,255,0.9);
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 12px;
 }
-  </style>
-  <script>
-  document.querySelector(".submit-btn").addEventListener("click", function(e) {
-  this.style.transform = "scale(0.9)";
-  setTimeout(() => {
-    this.style.transform = "scale(1)";
-  }, 150);
-});
-  </script>
+
+.info-box h2 {
+    color: red;
+}
+
+</style>
+
 </head>
 <body>
-  <header>
-    <div class="logo">
+
+<div class="container">
+
+    <div class="form-box">
+        <h1>FREE TOURNAMENTS !!</h1>
+
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="UID">
+            <input type="text" placeholder="Instagram">
+            <input type="text" placeholder="Level">
+
+            <label>Can you win ??</label>
+            <textarea placeholder="Comment"></textarea>
+
+            <button type="submit">SUBMIT</button>
+        </form>
     </div>
-  </header>
-    <section class="hero">
-  <div class="hero-content">
-    <h1>Welcome to GURJAR NG</h1>
-    <p>Join our guild — Free Fire Max</p>
-    <h2 class="h2-neon" To join my Guild in freefiremax</h2>
-  </div>
-</section>
 
-  <div class="container">
-    <h1>Guild Registration<br>Free Fire Max</h1>
+    <div class="info-box">
+        <h2>Jaruri baatein dhyan rakhe !</h2>
+        <ul>
+            <li>Only booyah price is 30rs. no extra reward</li>
+            <li>Room id and password announce on @nikhilesh_gurjar</li>
+            <li>Time - 7pm, 6 Mar, 2026</li>
+        </ul>
+    </div>
 
-    <form action="https://formsubmit.co/nikhileshgurjar11@gmail.com" method="post">
-      <div class="input-box">
-        <label for="Uid">UID</label>
-        <input type="number" name="Uid" required placeholder="Enter UID">
-      </div>
-
-      <div class="input-box">
-        <label for="Username">Username</label>
-        <input type="text" name="Username" id="Username" required  placeholder="Enter Username">
-      </div>
-
-      <div class="input-box">
-        <label for="instagram">Instagram</label>
-        <input type="text" name="instagram" required placeholder="Enter Instagram ID">
-      </div>
-
-      <div class="input-box">
-        <label for="Level">Level</label>
-        <input type="number" name="Level" placeholder="Enter your Level">
-      </div>
-
-      <div class="input-box">
-        <label for="Comments">Comments</label>
-        <textarea id="Comments" name="Comments" rows="4" placeholder="Enter Your Comments"></textarea>
-      </div>
-
-      <button class="submit-btn" type="submit">Submit</button>
-    </form>
-  </div>
+</div>
 
 </body>
 </html>
